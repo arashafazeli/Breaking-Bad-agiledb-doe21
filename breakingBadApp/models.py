@@ -1,6 +1,6 @@
 from numpy import integer
 from sqlalchemy.orm import relationship
-from breakingBadApp.database import Base
+from database import Base
 from sqlalchemy import VARCHAR, Column, Date, Integer
 from sqlalchemy.sql.schema import ForeignKey
 

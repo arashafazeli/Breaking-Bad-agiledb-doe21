@@ -2,8 +2,8 @@ import psycopg2
 import time
 from psycopg2.extras import RealDictCursor
 from sqlalchemy.orm import Session
-import breakingBadApp.models as models
-from breakingBadApp.database import engine, get_db
+import models
+from database import engine, get_db
 
 
 models.Base.metadata.create_all(bind=engine)
