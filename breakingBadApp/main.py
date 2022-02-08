@@ -13,7 +13,7 @@ while True:
 
     try:
         conn = psycopg2.connect(host='dev.kjeld.io', database="breakingbad", user='bb',
-                                password='bb2022', cursor_factory=RealDictCursor)
+                                password='password', cursor_factory=RealDictCursor)
         cursor = conn.cursor()
         print("Database connection was successfull!")
         break
