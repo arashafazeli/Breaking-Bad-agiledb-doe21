@@ -3,7 +3,7 @@ import time
 from psycopg2.extras import RealDictCursor
 from sqlalchemy.orm import Session
 import models
-from database import engine, get_db
+from database import engine
 
 
 models.Base.metadata.create_all(bind=engine)

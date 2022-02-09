@@ -3,6 +3,8 @@ from sqlalchemy.orm import relationship
 from database import Base
 from sqlalchemy import VARCHAR, Column, Date, Integer
 from sqlalchemy.sql.schema import ForeignKey
+from sqlalchemy.sql.sqltypes import TIMESTAMP
+from sqlalchemy.sql.expression import text
 
 
 class Admin_user(Base):
@@ -20,13 +22,12 @@ class Admin_user(Base):
 
 class Admin_role(Base):
     __tablename__ = "role_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     permission_id = Column(Integer, ForeignKey(
         "permission.id", ondelete='SET NULL'), nullable=False)
     customer_id = Column(Integer, ForeignKey(
-        "customer.id", ondelete='SET NULL'), nullable=False)
-    employee = Column(VARCHAR(50), unique=True, nullable=False)
-    b2c = Column(VARCHAR(50), unique=True, nullable=False)
+        "customer.id", ondelete='SET NULL'), nullable=True)
+    role_name = Column(VARCHAR(50), unique=True, nullable=False)
 
     owner = relationship("Admin_role")
 
@@ -40,11 +41,11 @@ class Admin_permission(Base):
 
 class Customer_customer(Base):
     __tablename__ = "customer"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     user_id = Column(Integer, ForeignKey(
         "user_table.id", ondelete='CASCADE'), nullable=False)
     category_id = Column(Integer, ForeignKey(
-        "category_table.id", ondelete='SET NULL'), nullable=False)
+        "category_table.id", ondelete='SET NULL'), nullable=True)
     receipt = Column(VARCHAR(50), nullable=True)
     history = Column(VARCHAR(100), nullable=True)
     chatt = Column(VARCHAR(100), nullable=True)
@@ -70,7 +71,7 @@ class Customer_community(Base):
 
 class Customer_category(Base):
     __tablename__ = "category_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     customer_id = Column(Integer, ForeignKey(
         "customer.id", ondelete='SET NULL'), nullable=False)
     category_name = Column(VARCHAR(50), unique=True, nullable=False)
@@ -80,7 +81,7 @@ class Customer_category(Base):
 
 class customer_join(Base):
     __tablename__ = "join_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     customer_id = Column(Integer, ForeignKey(
         "customer.id", ondelete='CASCADE'), nullable=False)
     customer_service_id = Column(Integer, ForeignKey(
@@ -92,7 +93,7 @@ class customer_join(Base):
 
 class Customer_customerService(Base):
     __tablename__ = "customer_service_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     user_id = Column(Integer, ForeignKey(
         "user_table.id", ondelete='CASCADE'), nullable=False)
     message = Column(VARCHAR(250), nullable=False)
@@ -102,7 +103,7 @@ class Customer_customerService(Base):
 
 class Customer_memberBenefits(Base):
     __tablename__ = "memberBenefits_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     event_id = Column(Integer, ForeignKey(
         "event.id", ondelete='SET NULL'), nullable=False)
     customer_id = Column(Integer, ForeignKey(
@@ -116,7 +117,7 @@ class Customer_memberBenefits(Base):
 
 class Customer_event(Base):
     __tablename__ = "event"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     customer_id = Column(Integer, ForeignKey(
         "customer.id", ondelete='SET NULL'), nullable=False)
     category_id = Column(Integer, ForeignKey(
@@ -129,7 +130,7 @@ class Customer_event(Base):
 
 class Product_order(Base):
     __tablename__ = "order"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     order_status_id = Column(Integer, ForeignKey(
         "order_status.id", ondelete='CASCADE'), nullable=True)
     product_id = Column(Integer, ForeignKey(
@@ -138,8 +139,9 @@ class Product_order(Base):
         "user_table.id", ondelete='CASCADE'), nullable=False)
     supplier_id = Column(Integer, ForeignKey(
         "supplier_table.id", ondelete='SET NULL'), nullable=False)
-    date = Column(Date, nullable=False)
-    total_price = Column(Integer, nullable=False)
+    date = Column(TIMESTAMP(timezone=True), nullable=False,
+                  server_default=text('now()'))
+    total_price = Column(VARCHAR(50), nullable=False)
 
     owner_orderStatus = relationship("Product_orderStatus")
     owner_product = relationship("Product_product")
@@ -149,11 +151,15 @@ class Product_order(Base):
 
 class Product_csTicket(Base):
     __tablename__ = "cs_ticket"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     order_id = Column(Integer, ForeignKey(
         "order.id", ondelete='CASCADE'), nullable=False)
     customer_service_id = Column(Integer, ForeignKey(
         "customer_service_table.id", ondelete='SET NULL'), nullable=False)
+    issue_open = Column(TIMESTAMP(timezone=True), nullable=True,
+                        server_default=text('now()'))
+    issue_closed = Column(TIMESTAMP(timezone=True), nullable=True,
+                          server_default=text('now()'))
 
     owner_order = relationship("Product_order")
     owner_customerService = relationship("Customer_customerService")
@@ -161,20 +167,32 @@ class Product_csTicket(Base):
 
 class Product_orderStatus(Base):
     __tablename__ = "order_status"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     order_id = Column(Integer, ForeignKey(
         "order.id", ondelete='CASCADE'), nullable=False)
+    received = Column(TIMESTAMP(timezone=True), nullable=True,
+                      server_default=text('now()'))
+    packing = Column(TIMESTAMP(timezone=True), nullable=True,
+                     server_default=text('now()'))
+    ready_to_ship = Column(TIMESTAMP(timezone=True), nullable=True,
+                           server_default=text('now()'))
+    sent = Column(TIMESTAMP(timezone=True), nullable=True,
+                  server_default=text('now()'))
+    canceled = Column(TIMESTAMP(timezone=True), nullable=True,
+                      server_default=text('now()'))
+    delayed = Column(TIMESTAMP(timezone=True), nullable=True,
+                     server_default=text('now()'))
 
     owner = relationship("Product_order")
 
 
 class Product_supplier(Base):
     __tablename__ = "supplier_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     product_id = Column(Integer, ForeignKey(
-        "product.id", ondelete='SET NULL'), nullable=False)
+        "product.id", ondelete='SET NULL'), nullable=True)
     adress = Column(VARCHAR(50), nullable=False)
-    org_nummer = Column(VARCHAR(10), nullable=False)
+    org_nummer = Column(VARCHAR(11), nullable=False)
     contact = Column(VARCHAR(50), nullable=False)
 
     owner = relationship("Product_product")
@@ -182,7 +200,7 @@ class Product_supplier(Base):
 
 class Product_recommendations(Base):
     __tablename__ = "recommendations_table"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     product_id = Column(Integer, ForeignKey(
         "product.id", ondelete='SET NULL'), nullable=False)
     user_id = Column(Integer, ForeignKey(
@@ -195,7 +213,7 @@ class Product_recommendations(Base):
 
 class Product_product(Base):
     __tablename__ = "product"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     supplier_id = Column(Integer, ForeignKey(
         "supplier_table.id", ondelete='SET NULL'), nullable=False)
     category_id = Column(Integer, ForeignKey(
@@ -203,7 +221,7 @@ class Product_product(Base):
     description = Column(VARCHAR(100), nullable=False)
     product_name = Column(VARCHAR(50), nullable=False)
     quantity = Column(Integer, nullable=False)
-    price = Column(Integer, nullable=False)
+    price = Column(VARCHAR(50), nullable=False)
 
     owner_supplier = relationship("Product_supplier")
     owner_category = relationship("Customer_category")
