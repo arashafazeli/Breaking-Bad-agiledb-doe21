@@ -71,13 +71,13 @@ You can connect to the server with CLI by connecting to dev.kjeld.io with the ne
 ## Illustrations
 Follow links below.
 
-- Pattern of behaviour:
+- Pattern of behaviour:  
 https://docs.google.com/presentation/d/1hllAotwtBmk18Gi0UMG7p_S4py3Ro-xAO43ZsNF58FY/edit#slide=id.p 
 
-- All ER-Diagrams, conceptual ==> Locigal ==> Physical:
+- All ER-Diagrams, conceptual ==> Locigal ==> Physical:  
 https://docs.google.com/presentation/d/1u98499DuQBxbTaCSmve9_dHu1fISXfboQHc0pRiSmtE/edit#slide=id.g112034eab97_0_7 
 
-- Our trello bord over the sprints.
+- Our trello bord over the sprints.  
 https://docs.google.com/presentation/d/1XGt3VeUWKYDEQZoHprF0vYRpC_c-sbqUvHDXNScSiXo/edit?usp=sharing
 
  ## Scope of functionalities 
