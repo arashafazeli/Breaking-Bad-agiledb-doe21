@@ -1,14 +1,14 @@
 # BreakingBad-DOE21
 
-Introduction - the project's aim	2
-Technologies	2
-Launch	2
-Illustrations	3
-Scope of functionalities	3
-Examples of use	3
-Project status	3
-Sources	3
-Other information	3
+Introduction - the project's aim  
+Technologies  
+Launch  
+Illustrations  
+Scope of functionalities  
+Examples of use  
+Project status  
+Sources  
+Other information  
 
 
 
@@ -97,9 +97,9 @@ ERD, conceptual, logical and physical models are finished. Please see a separate
 
 Next step is to create and connect to an API and add HTTP-requests to handle input and output data.
 ## Sources
-1.https://www.youtube.com/watch?v=ZBgXb66Ckz0
-2.https://www.youtube.com/watch?v=QqlPXKxN6LQ
-3.https://www.youtube.com/watch?v=IwOp4R5PzU0
-3.https://www.youtube.com/watch?v=SnZDfD8AVkw 
-4.https://www.youtube.com/watch?v=2pxVCzRFGeg
+1.https://www.youtube.com/watch?v=ZBgXb66Ckz0  
+2.https://www.youtube.com/watch?v=QqlPXKxN6LQ  
+3.https://www.youtube.com/watch?v=IwOp4R5PzU0  
+3.https://www.youtube.com/watch?v=SnZDfD8AVkw  
+4.https://www.youtube.com/watch?v=2pxVCzRFGeg  
 5.https://www.postgresql.org/docs/13/app-psql.html
