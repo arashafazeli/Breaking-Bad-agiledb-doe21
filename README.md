@@ -43,7 +43,7 @@ We solved it with a postgresSQL database with following requirements.
 
 You can connect to the server with CLI by connecting to dev.kjeld.io with the necessary credenditals. The standard postgres commands apply there.
 
-| Following tables are available                 |                |  
+| Following tables are available                 |    
 | --------------------- |:----------------------:| --------------:|  
 | category_table        | community              | cs_ticket      |  
 | customer              | customer_service_table | event          |  
