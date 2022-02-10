@@ -52,6 +52,7 @@ You can connect to the server with CLI by connecting to dev.kjeld.io with the ne
 | recommendstions_table  |  
 | user_table  
 
+| Tables  
 | ------------------------- |  
 | community                 |  
 | customer_service_table    |  
@@ -59,6 +60,7 @@ You can connect to the server with CLI by connecting to dev.kjeld.io with the ne
 | permission                |  
 | role_table                |  
 
+| Tables  
 | -------------- |  
 | cs_ticket      |  
 | event          |  
