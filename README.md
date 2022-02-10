@@ -14,32 +14,43 @@
 
 
 ## Introduction - the project's aim
-The goal is to create a specialized e-commerce for pets to take up the fight with Amazon. In addition to the usual functionality that most e-commerce platforms have, we also wanted to enable a platform to users, with groups and messages.
-We solved it with a postgresSQL database.
-It must be possible to create users, with email, password, address
-Users must be able to have at least three different roles
-Users can create groups with one or more other users
-Users should be able to create posts in groups
-Users should be able to send private messages to each other
-Users should be able to place an order
-An order contains one or more order lines
-It must be possible to enter goods with a stock balance
-An order has status (received, packed, ready to be sent, sent, canceled)
-Review products
-Case management (customer service)
-Recommendation lists
+Our goal is to create a specialized e-commerce for pets. In addition to the usual functionality that most e-commerce platforms have, we also wanted to enable a platform to users.
+
+We solved it with a postgresSQL database with following requirements.
+- It must be possible to create users, with email, password, address
+- Users must be able to have at least three different roles
+- Users can create groups with one or more other users
+- Users should be able to create posts in groups
+- Users should be able to send private messages to each other
+- Users should be able to place an order
+- An order contains one or more order lines
+- It must be possible to enter goods with a stock balance
+- An order has status (received, packed, ready to be sent, sent, canceled)
+- Review products
+- Case management (customer service)
+- Recommendation lists
+
 
 ## Technologies
-We have worked agile with SCRUM methods.
-We used Trelloboard to plan the sprints.
-We have used ERD (Whimsical) to modulate the database.
-We have used planning poker to plan the time required.
-We have had daily SCRUM standups via google meet.
+- We have worked agile with SCRUM methods.
+- We used Trelloboard to plan the sprints.
+- We have used ERD (Whimsical) to modulate the database.
+- We have used planning poker to plan the time required.
+- We have had daily SCRUM standups via google meet.
+- We use python, psycopg2, postgreSQL database and SQLAlchemy
 
-We use python, psycopg2, postgreSQL database and SQLAlchemy
+## Launch
 
-Launch
+You can connect to the server with CLI by connecting to dev.kjeld.io with the necessary credenditals. The standard postgres commands apply there.
 
+| Following tables are available                 |                |
+| --------------------- |:----------------------:| --------------:|
+| category_table        | community              | cs_ticket      |
+| customer              | customer_service_table | event          |
+| join_table            | memberBenefits_table   | order          |
+| order_status          | permission             | product        |
+| recommendstions_table | role_table             | supplier_table |
+| user_table            |                        |                |
 
 
 ## Illustrations
@@ -52,7 +63,7 @@ https://docs.google.com/presentation/d/1hllAotwtBmk18Gi0UMG7p_S4py3Ro-xAO43ZsNF5
 https://docs.google.com/presentation/d/1u98499DuQBxbTaCSmve9_dHu1fISXfboQHc0pRiSmtE/edit#slide=id.g112034eab97_0_7 
 
 - Our trello bord over the sprints.
-
+https://docs.google.com/presentation/d/1XGt3VeUWKYDEQZoHprF0vYRpC_c-sbqUvHDXNScSiXo/edit?usp=sharing
 
  ## Scope of functionalities 
 A customer should be able to:
@@ -92,7 +103,10 @@ When creating the database we used Postgresql in our school server. To integrate
 To establish connection between our py-files and postgres we use the database-URL, db-credentials and psycopg2 as db-adapter.
 
 When adding data to our tables we used raw SQL directly in the database. In the next group assignment we will consider using HTTP-requests.
-Project status 
+
+Please see our breakingBadApp-folder to see the py-files with all the code.
+
+## Project status 
 ERD, conceptual, logical and physical models are finished. Please see a separate file for pictures. The physical model is launched to Postgresql by SQLAlchemy and other programs used in vscode. All tables are updated and tested. Please see a separate file for that as well.
 
 Next step is to create and connect to an API and add HTTP-requests to handle input and output data.
