@@ -1,14 +1,14 @@
 # BreakingBad-DOE21
 
-Introduction - the project's aim  
-Technologies  
-Launch  
-Illustrations  
-Scope of functionalities  
-Examples of use  
-Project status  
-Sources  
-Other information  
+- Introduction - the project's aim  
+- Technologies  
+- Launch  
+- Illustrations  
+- Scope of functionalities  
+- Examples of use  
+- Project status  
+- Sources  
+- Other information  
 
 
 
