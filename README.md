@@ -43,8 +43,8 @@ We solved it with a postgresSQL database with following requirements.
 
 You can connect to the server with CLI by connecting to dev.kjeld.io with the necessary credenditals. The standard postgres commands apply there.
 
-| Following tables are available                     
-| --------------------------------------------------------------------- |  
+| Following tables are available  
+| -----------------------|  
 | category_table         |  
 | customer               |  
 | join_table             |  
@@ -81,7 +81,7 @@ https://docs.google.com/presentation/d/1u98499DuQBxbTaCSmve9_dHu1fISXfboQHc0pRiS
 https://docs.google.com/presentation/d/1XGt3VeUWKYDEQZoHprF0vYRpC_c-sbqUvHDXNScSiXo/edit?usp=sharing
 
  ## Scope of functionalities 
-A customer should be able to:
+### A customer should be able to:
 - Become a member.
 - Add items to their basket.
 - Purchase items.
@@ -93,7 +93,7 @@ A customer should be able to:
 - Create a customer service issue.
 - Get member benefits.
 
-An employee should be able to:
+### An employee should be able to:
 - Choose a role within the company.
 - See product quantity.
 - Overview all products.
@@ -106,7 +106,7 @@ An employee should be able to:
 - Create events.
 - See order status.
 
-A supplier should be able to:
+### A supplier should be able to:
 - See our products.
 - See our quantity.
 - Change their contact information.
