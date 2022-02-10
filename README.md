@@ -45,13 +45,24 @@ You can connect to the server with CLI by connecting to dev.kjeld.io with the ne
 
 | Following tables are available                     
 | --------------------------------------------------------------------- |  
-| category_table         |     | community                 | | cs_ticket      |
-| customer               |     | customer_service_table    | | event          |
-| join_table             |     | memberBenefits_table      | | order          |
-| order_status           |     | permission                | | product        |
-| recommendstions_table  |     | role_table                | | supplier_table |  
+| category_table         |  
+| customer               |  
+| join_table             |  
+| order_status           |  
+| recommendstions_table  |  
 | user_table  
 
+| community                 |  
+| customer_service_table    |  
+| memberBenefits_table      |  
+| permission                |  
+| role_table                |  
+
+| cs_ticket      |  
+| event          |  
+| order          |  
+| product        |  
+| supplier_table |  
 
 ## Illustrations
 Follow links below.
