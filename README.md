@@ -51,18 +51,18 @@ You can connect to the server with CLI by connecting to dev.kjeld.io with the ne
 | order_status           |  
 | recommendstions_table  |  
 | user_table  
-| ------------------------- |  
-| community                 |  
-| customer_service_table    |  
-| memberBenefits_table      |  
-| permission                |  
-| role_table                |  
-| -------------- |  
-| cs_ticket      |  
-| event          |  
-| order          |  
-| product        |  
-| supplier_table |  
+| ---------------------- |  
+| community              |  
+| customer_service_table |  
+| memberBenefits_table   |  
+| permission             |  
+| role_table             |  
+| ---------------------- |  
+| cs_ticket              |  
+| event                  |  
+| order                  |  
+| product                |  
+| supplier_table         |  
 
 ## Illustrations
 Follow links below.
