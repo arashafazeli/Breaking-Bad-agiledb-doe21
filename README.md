@@ -51,16 +51,12 @@ You can connect to the server with CLI by connecting to dev.kjeld.io with the ne
 | order_status           |  
 | recommendstions_table  |  
 | user_table  
-
-| Tables  
 | ------------------------- |  
 | community                 |  
 | customer_service_table    |  
 | memberBenefits_table      |  
 | permission                |  
 | role_table                |  
-
-| Tables  
 | -------------- |  
 | cs_ticket      |  
 | event          |  
@@ -125,6 +121,16 @@ Please see our breakingBadApp-folder to see the py-files with all the code.
 ERD, conceptual, logical and physical models are finished. Please see a separate file for pictures. The physical model is launched to Postgresql by SQLAlchemy and other programs used in vscode. All tables are updated and tested. Please see a separate file for that as well.
 
 Next step is to create and connect to an API and add HTTP-requests to handle input and output data.
+
+
+## Contributors
+- Kjell Bovin
+- Alva Thunberg
+- Arash Afazeli
+- Ramin Dadgar
+- Ludvig Ravelin
+- Shaho Khosravi
+
 ## Sources
 1.https://www.youtube.com/watch?v=ZBgXb66Ckz0  
 2.https://www.youtube.com/watch?v=QqlPXKxN6LQ  
