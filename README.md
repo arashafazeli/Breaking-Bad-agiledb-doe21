@@ -7,6 +7,7 @@
 - Scope of functionalities  
 - Examples of use  
 - Project status  
+- Contributors  
 - Sources  
 - Other information  
 
