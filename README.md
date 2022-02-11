@@ -9,7 +9,6 @@
 - Project status  
 - Contributors  
 - Sources  
-- Other information  
 
 
 
